@@ -11,7 +11,7 @@ $result = curl_exec($ch);
 curl_close ($ch);
 if(strpos( $result, 'Result is negative' ) == true) {echo 'No';}
 if(strpos( $result, 'Result is positive' ) == true) {echo 'Yes';}
-if( $result=='' ) {echo 'Exonerator Denied Request';}
+if( $result == '' ) {echo 'Exonerator Denied Request';}
 ?>
 
 <!--
