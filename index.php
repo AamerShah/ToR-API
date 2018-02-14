@@ -3,6 +3,7 @@ error_reporting(0);
 $ip = $_SERVER['REMOTE_ADDR']; 
 date_default_timezone_set('UTC');
 $ndate = date("d")-3;
+$timestamp = date("Y-m-").$ndate;
 if (($ndate < 10) && ($ndate > 0))
     {
     $ndate = "0".$ndate;
@@ -14,7 +15,6 @@ if ($ndate < 1)
     if ($nmon < 10) {$nmon = "0".$nmon;}
     $timestamp = date("Y-").$nmon.date("-d");
     }
-$timestamp = date("Y-m-").$ndate;
 $url = 'https://exonerator.torproject.org/?ip='.$ip.'&timestamp='.$timestamp.'&lang=en';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
