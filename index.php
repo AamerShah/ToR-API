@@ -14,6 +14,7 @@ if ($ndate < 1)
     if ($nmon < 10) {$nmon = "0".$nmon;}
     $timestamp = date("Y-").$nmon.date("-d");
     }
+$timestamp = date("Y-m-").$ndate;
 $url = 'https://exonerator.torproject.org/?ip='.$ip.'&timestamp='.$timestamp.'&lang=en';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -28,9 +29,9 @@ if( $result == '' ) {echo 'API is down';}
 
 <!--
 In case you want to block ToR users from accessing the page;
-copy this code the top of that page and remove line 24 of this code
+copy this code the top of that page and remove line 25 of this code
 and
-in line 25 (of this code), replace
+in line 26 (of this code), replace
 {echo 'Yes';}
 with
 {echo 'ToR network is blocked on this site';exit;}
