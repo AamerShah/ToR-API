@@ -15,6 +15,11 @@ if ($ndate < 1)
     if ($nmon < 10) {$nmon = "0".$nmon;}
     $timestamp = date("Y-").$nmon.date("-d");
     }
+if ($nmon < 1)
+    {
+    $ny = date("Y")-1;
+    $timestamp = $ny.date("-12-d");
+    }
 $url = 'https://metrics.torproject.org/exonerator.html?ip='.$ip.'&timestamp='.$timestamp.'&lang=en';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
